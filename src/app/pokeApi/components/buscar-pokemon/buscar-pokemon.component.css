@@ -1,0 +1,125 @@
+.pokedex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.pokemon-card {
+  width: 180px;
+  height: auto; /* Ajuste automático de altura */
+  border: 2px solid #ffcb05;
+  border-radius: 8px;
+  background-color: #f4f4f9;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3b4cca;
+  padding: 0.5rem; /* Espaciado reducido */
+  color: #fff;
+  font-weight: bold;
+}
+
+.titleId {
+  font-size: 0.9rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+}
+
+.imgPokemon img {
+  width: 80%; /* Imagen más pequeña para hacer la tarjeta más compacta */
+  height: auto;
+  padding: 6px;
+  background-color: #ff6f61;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto;
+}
+
+.pokemon-info {
+  padding: 6px; /* Espaciado reducido */
+  color: #333;
+  background-color: #f9f9f9;
+  border-top: 2px solid #ffcb05;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.infoItem {
+  font-size: 0.8rem; /* Tamaño de fuente reducido */
+  line-height: 1.2;
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoItem span {
+  font-weight: bold;
+  color: #3b4cca;
+}
+
+.button-verMas {
+  display: flex;
+  justify-content: center;
+  padding: 6px;
+}
+
+.verMas-button {
+  background-color: #ffcb05;
+  color: #3b4cca;
+  font-weight: bold;
+  border: none;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #ff6f61;
+  }
+}
+
+/* Ajustes de responsive */
+@media (max-width: 1200px) {
+  .pokemon-card {
+    width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pokemon-card {
+    width: 120px;
+  }
+}
+
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+
+
+.search-input {
+  width: 300px;
+}
+
+.search-button {
+  background-color: #ffcb05;
+  color: #3b4cca;
+  border: none;
+}
+

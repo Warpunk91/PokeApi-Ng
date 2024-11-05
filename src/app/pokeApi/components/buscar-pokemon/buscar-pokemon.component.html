@@ -1,0 +1,52 @@
+<div class="search-container">
+  <input pInputText type="text"  #pokemonName (input)="updateName(pokemonName.value)" placeholder="Buscar Pokémon..." class="search-input" />
+  <button pButton type="button" (click)="loadPokemon()" icon="pi pi-search" label="Buscar"  class="search-button"></button>
+</div>
+
+
+<div #content>
+  <div class="pokedex-container">
+    @for(item of pokemonesCompletos(); track item.id){
+
+      <p-card class="pokemon-card">
+      
+        <!-- Cabecera de la tarjeta -->
+        <ng-template pTemplate="header">
+          <div class="cardHeader">
+            <div class="titleId">{{ item.id }}</div>
+            <div class="subtitle">{{ item.name }}</div>
+          </div>
+        </ng-template>
+        
+        <!-- Imagen del Pokémon -->
+        <div class="imgPokemon">
+          <img p-card-img [src]="pokemonImageUrl()" [alt]="item.name">
+        </div>
+        
+        <!-- Información del Pokémon -->
+        <div class="pokemon-info">
+          <div class="infoItem">
+            <span>Altura:</span>
+            <p>{{ item.height }}</p>
+          </div>
+          <div class="infoItem">
+            <span>Peso:</span>
+            <p>{{ item.weight }}</p>
+          </div>
+          <div class="infoItem">
+            <span>Tipo:</span>
+            <ng-container *ngFor="let tipo of item.types">
+              <p>{{ tipo.type.name }}</p>
+            </ng-container>
+          </div>
+        </div>
+
+        
+      </p-card>
+
+    }
+    
+  </div>
+</div>
+
+
